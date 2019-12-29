@@ -32,11 +32,20 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { log } from 'util'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+
+  created() {
+    axios.get('/user/userInfo').then((data)=>{
+      console.log(data);
+        
+    })
+  },
 }
 </script>
 
